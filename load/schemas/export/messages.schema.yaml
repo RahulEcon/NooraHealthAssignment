@@ -1,0 +1,175 @@
+version: 3
+version_hash: wdjrrAt9re936bgcJ/Av3V1uMUtQJmeMR++IWJZmXbs=
+engine_version: 11
+name: messages
+tables:
+  _dlt_version:
+    columns:
+      version:
+        data_type: bigint
+        nullable: true
+      engine_version:
+        data_type: bigint
+        nullable: true
+      inserted_at:
+        data_type: timestamp
+        nullable: true
+      schema_name:
+        data_type: text
+        nullable: true
+      version_hash:
+        data_type: text
+        nullable: true
+      schema:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    resource: _dlt_version
+    description: Created by DLT. Tracks schema updates
+  _dlt_loads:
+    columns:
+      load_id:
+        data_type: text
+        nullable: true
+      schema_name:
+        data_type: text
+        nullable: true
+      status:
+        data_type: bigint
+        nullable: true
+      inserted_at:
+        data_type: timestamp
+        nullable: true
+      schema_version_hash:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    resource: _dlt_loads
+    description: Created by DLT. Tracks completed loads
+  messages:
+    columns:
+      id:
+        data_type: text
+        nullable: true
+      message_type:
+        data_type: text
+        nullable: true
+      masked_addressees:
+        data_type: text
+        nullable: true
+      masked_author:
+        data_type: text
+        nullable: true
+      content:
+        data_type: text
+        nullable: true
+      author_type:
+        data_type: text
+        nullable: true
+      direction:
+        data_type: text
+        nullable: true
+      external_id:
+        data_type: text
+        nullable: true
+      external_timestamp:
+        data_type: text
+        nullable: true
+      masked_from_addr:
+        data_type: text
+        nullable: true
+      is_deleted:
+        data_type: text
+        nullable: true
+      last_status:
+        data_type: text
+        nullable: true
+      last_status_timestamp:
+        data_type: text
+        nullable: true
+      rendered_content:
+        data_type: text
+        nullable: true
+      source_type:
+        data_type: text
+        nullable: true
+      uuid:
+        data_type: text
+        nullable: true
+      inserted_at:
+        data_type: text
+        nullable: true
+      updated_at:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: true
+        unique: true
+        row_key: true
+    write_disposition: replace
+    resource: messages
+    x-normalizer:
+      seen-data: true
+  _dlt_pipeline_state:
+    columns:
+      version:
+        data_type: bigint
+        nullable: true
+      engine_version:
+        data_type: bigint
+        nullable: true
+      pipeline_name:
+        data_type: text
+        nullable: true
+      state:
+        data_type: text
+        nullable: true
+      created_at:
+        data_type: timestamp
+        nullable: true
+      version_hash:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: true
+        unique: true
+        row_key: true
+    write_disposition: append
+    file_format: preferred
+    resource: _dlt_pipeline_state
+    x-normalizer:
+      seen-data: true
+settings:
+  detections:
+  - iso_timestamp
+  default_hints:
+    not_null:
+    - _dlt_id
+    - _dlt_root_id
+    - _dlt_parent_id
+    - _dlt_list_idx
+    - _dlt_load_id
+    parent_key:
+    - _dlt_parent_id
+    root_key:
+    - _dlt_root_id
+    unique:
+    - _dlt_id
+    row_key:
+    - _dlt_id
+normalizers:
+  names: snake_case
+  json:
+    module: dlt.common.normalizers.json.relational
+previous_hashes:
+- r9oEzMMFWTQIxF8gbCF3NxXMRgwSgVNE63jCPzhTJAQ=
+- yrbR78yHDQ16Tcyg+YPqsERW69OnThUbiECX8wyw7qc=
+- D9/1UQEAw0Mm0Hu08Mx+gS+JFhzxEpb/45QIelejV18=

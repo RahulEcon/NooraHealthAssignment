@@ -1,0 +1,149 @@
+version: 3
+version_hash: as3SIWeuT9Lx8AtB8debuminilIVNuvlOVO5c62hShI=
+engine_version: 11
+name: statuses
+tables:
+  _dlt_version:
+    columns:
+      version:
+        data_type: bigint
+        nullable: true
+      engine_version:
+        data_type: bigint
+        nullable: true
+      inserted_at:
+        data_type: timestamp
+        nullable: true
+      schema_name:
+        data_type: text
+        nullable: true
+      version_hash:
+        data_type: text
+        nullable: true
+      schema:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    resource: _dlt_version
+    description: Created by DLT. Tracks schema updates
+  _dlt_loads:
+    columns:
+      load_id:
+        data_type: text
+        nullable: true
+      schema_name:
+        data_type: text
+        nullable: true
+      status:
+        data_type: bigint
+        nullable: true
+      inserted_at:
+        data_type: timestamp
+        nullable: true
+      schema_version_hash:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    resource: _dlt_loads
+    description: Created by DLT. Tracks completed loads
+  statuses:
+    columns:
+      id:
+        data_type: text
+        nullable: true
+      status:
+        data_type: text
+        nullable: true
+      timestamp:
+        data_type: text
+        nullable: true
+      uuid:
+        data_type: text
+        nullable: true
+      message_uuid:
+        data_type: text
+        nullable: true
+      message_id:
+        data_type: text
+        nullable: true
+      number_id:
+        data_type: text
+        nullable: true
+      inserted_at:
+        data_type: text
+        nullable: true
+      updated_at:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: true
+        unique: true
+        row_key: true
+    write_disposition: replace
+    resource: statuses
+    x-normalizer:
+      seen-data: true
+  _dlt_pipeline_state:
+    columns:
+      version:
+        data_type: bigint
+        nullable: true
+      engine_version:
+        data_type: bigint
+        nullable: true
+      pipeline_name:
+        data_type: text
+        nullable: true
+      state:
+        data_type: text
+        nullable: true
+      created_at:
+        data_type: timestamp
+        nullable: true
+      version_hash:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: true
+        unique: true
+        row_key: true
+    write_disposition: append
+    file_format: preferred
+    resource: _dlt_pipeline_state
+    x-normalizer:
+      seen-data: true
+settings:
+  detections:
+  - iso_timestamp
+  default_hints:
+    not_null:
+    - _dlt_id
+    - _dlt_root_id
+    - _dlt_parent_id
+    - _dlt_list_idx
+    - _dlt_load_id
+    parent_key:
+    - _dlt_parent_id
+    root_key:
+    - _dlt_root_id
+    unique:
+    - _dlt_id
+    row_key:
+    - _dlt_id
+normalizers:
+  names: snake_case
+  json:
+    module: dlt.common.normalizers.json.relational
+previous_hashes:
+- /sguOtzsHrPAjS1yt+MQbQml07gRmVaAFMQ3b6DNpdE=
+- 7xIxEP3k5n0RmovGp6G0CMPH1AMU0KTqfl9G64rMhSw=
+- 9FIAFslnF6CGGJnsNAp1JRalE1stzuBoJJ+jv10yz7k=
+- QaORMkbAzSpT8GLwtzqmgrPAkECwQ47N4fOc4lZ9evk=
