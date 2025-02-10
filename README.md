@@ -4,7 +4,7 @@
 This project **extracts, loads, and transforms** data from stored CSV files, performs **data validation**, and dynamically manages **schema evolution** using `dlthub`.  
 The final output is visualized in **Power BI**.
 
-🔗 **Final Dashboard:** [View in Power BI](https://app.powerbi.com/reportEmbed?reportId=80730d73-ee38-4fdc-b481-e97311a78dba&autoAuth=true&ctid=42783e7f-e805-41c6-ba39-5ce93898e685)
+🔗 **Final Dashboard:** [View in Power BI](https://app.powerbi.com/view?r=eyJrIjoiY2Q0ZWU1NjEtNDMyOC00YjNmLThmZDItNzUwNzRjNWE0ODNmIiwidCI6Ijc5NWZhNzgwLTdjZTktNDZmZS04MDk4LTY1YzJiN2UzYzg0MSJ9)
 
 ## ⚙️ Tech Stack
 - 🐍 **Python** – Core ETL processing  
